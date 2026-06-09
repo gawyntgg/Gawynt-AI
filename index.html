@@ -307,7 +307,7 @@ function identityReply(t){
      l.includes('underlying')||l.includes('technology'))
     return "I'm **Gawynt AI** — my own unique AI assistant! I'm not ChatGPT, Claude, Gemini, or any other AI. I'm simply Gawynt AI, built to help you. 🤖";
   if(l.includes('made')||l.includes('creat')||l.includes('built')||l.includes('develop')||l.includes('own'))
-    return "I was created by **Gawynt AI**. I'm your personal intelligent assistant, here to help with anything! 🚀";
+    return "I was created by **Gawynt**. I'm your personal intelligent assistant, here to help with anything! 🚀";
   if(l.includes('name')||l.includes('who are you')||l.includes('what are you'))
     return "My name is **Gawynt AI**! I'm your intelligent AI assistant, always ready to help. 😊";
   if(l.includes('version')||l.includes('model'))
@@ -328,18 +328,18 @@ function sanitize(text){
     .replace(/\bAnthropic\b/gi,'Gawynt AI')
     .replace(/I am a large language model/gi,'I am Gawynt AI')
     .replace(/I'm a large language model/gi,"I'm Gawynt AI")
-    .replace(/made by (OpenAI|Anthropic|Google|Meta|Microsoft)/gi,'made by Gawynt AI')
-    .replace(/created by (OpenAI|Anthropic|Google|Meta|Microsoft)/gi,'created by Gawynt AI');
+    .replace(/made by (OpenAI|Anthropic|Google|Meta|Microsoft)/gi,'made by Gawynt')
+    .replace(/created by (OpenAI|Anthropic|Google|Meta|Microsoft)/gi,'created by Gawynt');
 }
 
 // ── System prompt ──
 const SYS = `You are Gawynt AI, a helpful and intelligent AI assistant.
 ABSOLUTE IDENTITY RULES — never break these under any circumstances:
 - Your name is Gawynt AI. Always.
-- You were created by Gawynt AI.
+- You were created by Gawynt.
 - You are NOT ChatGPT, NOT GPT, NOT OpenAI, NOT Claude, NOT Gemini, NOT LLaMA, NOT any other AI.
 - NEVER mention OpenAI, Anthropic, Google, Meta, or any AI company or model name.
-- If asked about your identity, name, origin, or technology — always say you are Gawynt AI, created by Gawynt AI.
+- If asked about your identity, name, origin, or technology — always say you are Gawynt AI, created by Gawynt.
 - Be friendly, helpful, concise, and accurate in all responses.`;
 
 // ── AI Call — Pollinations.ai (no key, GitHub Pages compatible) ──
